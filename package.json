@@ -3,7 +3,14 @@
   "version": "0.0.1",
   "description": "simple navigation system using angular router with multiple levels",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rimraf": "./node_modules/.bin/rimraf",
+    "webpack": "./node_modules/.bin/webpack",
+
+	"build": "npm run rimraf -- dist && npm run webpack -- --colors --progress --display-error-details --display-cached",
+    "build:watch": "npm run build -- --watch",
+	"build:server": "./node_modules/.bin/webpack-dev-server --debug --colors --config ./webpack.config.js",
+
+	"serve": "./node_modules/.bin/http-server ./dist -p 8080 -d false -o"
   },
   "repository": {
     "type": "git",
@@ -28,8 +35,10 @@
     "css-loader": "^0.28.3",
     "custom-tslint-formatters": "^2.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "http-server": "^0.10.0",
+    "imports-loader": "^0.7.1",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.1",
     "style-loader": "^0.18.1",
@@ -37,6 +46,7 @@
     "tslint": "^5.3.2",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.3.3",
+    "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
@@ -52,7 +62,9 @@
     "babel-runtime": "^6.23.0",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "jquery": "^3.2.1",
     "rxjs": "^5.4.0",
+    "tether": "^1.4.0",
     "zone.js": "^0.8.11"
   }
 }
