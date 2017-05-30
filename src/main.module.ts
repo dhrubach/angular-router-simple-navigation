@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import {
 	AboutComponent,
+	CourseDetailComponent,
+	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
 	RouterNavigationAppComponent,
@@ -21,6 +23,8 @@ import { routes } from './routes';
 		AboutComponent,
 		HomeComponent,
 		CoursesComponent,
+		CourseDetailComponent,
+		CourseListComponent,
 	],
 	imports: [
 		BrowserModule,
