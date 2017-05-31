@@ -5,3 +5,5 @@ export * from './courses/courses.component';
 export * from './about/about.component';
 export * from './course-detail/course-detail.component';
 export * from './course-list/course-list.component';
+export * from './side-menu/side-menu.component';
+export * from './course-development/course-development.component';

@@ -1,7 +1,8 @@
-<!--<div class="card">-->
-	<div class="card-block">
-		<h4 class="card-title">{{course.title || ''}}</h4>
-		<h6 class="card-subtitle mb-2 text-muted">{{course.subtitle || ''}}</h6>
-		<p class="card-text">{{course.description || ''}}</p>
-	</div>
-<!--</div>-->
+<div class="card-block">
+	<h4 class="card-title">{{course.title || ''}}</h4>
+	<h6 class="card-subtitle mb-2 text-muted">{{course.subtitle || ''}}</h6>
+	<p class="card-text">{{course.description || ''}}</p>
+</div>
+<div class="card-footer" *ngIf="course.title === 'Development'">
+	<a (click)="navigate(course.title)" class="btn btn-secondary">View Details</a>
+</div>

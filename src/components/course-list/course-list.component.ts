@@ -10,7 +10,7 @@ import { CourseListService } from './../../services/course-list.service';
 })
 export class CourseListComponent {
 
-	constructor(public courseListService: CourseListService) { }
+	constructor(private courseListService: CourseListService) { }
 
 	public getCourses(): Course[] {
 		return this.courseListService.getCourses();

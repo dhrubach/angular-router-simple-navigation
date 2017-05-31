@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Course } from './../../models/course.model';
 
@@ -9,5 +10,16 @@ import { Course } from './../../models/course.model';
 export class CourseDetailComponent {
 
 	@Input() public course: Course;
+
+	constructor(private route: ActivatedRoute, private router: Router) { }
+
+	public navigate(path: string): void {
+		this.router.navigate([{
+			outlets: {
+				primary: path,
+				sidemenu: path,
+			},
+		}], { relativeTo: this.route });
+	}
 
 }

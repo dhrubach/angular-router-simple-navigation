@@ -6,10 +6,12 @@ import { RouterModule } from '@angular/router';
 import {
 	AboutComponent,
 	CourseDetailComponent,
+	CourseDevelopmentComponent,
 	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
 	RouterNavigationAppComponent,
+	SideMenuComponent,
 	TopMenuComponent,
 } from './components';
 
@@ -25,6 +27,8 @@ import { routes } from './routes';
 		CoursesComponent,
 		CourseDetailComponent,
 		CourseListComponent,
+		SideMenuComponent,
+		CourseDevelopmentComponent,
 	],
 	imports: [
 		BrowserModule,
