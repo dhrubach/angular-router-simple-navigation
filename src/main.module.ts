@@ -3,32 +3,14 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import {
-	AboutComponent,
-	CourseDetailComponent,
-	CourseDevelopmentComponent,
-	CourseListComponent,
-	CoursesComponent,
-	HomeComponent,
-	RouterNavigationAppComponent,
-	SideMenuComponent,
-	TopMenuComponent,
-} from './components';
+import {RouterNavigationAppComponent} from './components/app/app.component';
 
-import { routes } from './routes';
+import { components, routes } from './routes';
 
 @NgModule({
 	bootstrap: [RouterNavigationAppComponent],
 	declarations: [
-		RouterNavigationAppComponent,
-		TopMenuComponent,
-		AboutComponent,
-		HomeComponent,
-		CoursesComponent,
-		CourseDetailComponent,
-		CourseListComponent,
-		SideMenuComponent,
-		CourseDevelopmentComponent,
+		...components,
 	],
 	imports: [
 		BrowserModule,
