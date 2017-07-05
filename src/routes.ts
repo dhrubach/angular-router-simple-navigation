@@ -3,20 +3,24 @@ import { Route } from '@angular/router';
 import {
 	AboutComponent,
 	CourseDetailComponent,
+	CourseDevelopmentComponent,
 	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
 	RouterNavigationAppComponent,
+	SideMenuComponent,
 	TopMenuComponent,
 } from './components';
 
 const components = [
 	AboutComponent,
-	CoursesComponent,
 	CourseDetailComponent,
+	CourseDevelopmentComponent,
 	CourseListComponent,
+	CoursesComponent,
 	HomeComponent,
 	RouterNavigationAppComponent,
+	SideMenuComponent,
 	TopMenuComponent,
 ];
 

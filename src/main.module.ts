@@ -17,6 +17,7 @@ import { components, routes } from './routes';
 		HttpModule,
 		RouterModule.forRoot(routes, {
 			useHash: true,
+			enableTracing: false,
 		}),
 	],
 	providers: [],
