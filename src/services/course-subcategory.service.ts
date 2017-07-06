@@ -8,7 +8,6 @@ export class CourseSubcategoryService {
 
 		switch (category) {
 			case 'development':
-			case 'Development':
 				subcategories = [
 					'Coding',
 					'Unit Testing',
@@ -16,7 +15,22 @@ export class CourseSubcategoryService {
 					'Deployment',
 				];
 				break;
-			default :
+			case 'itsoftware':
+				subcategories = [
+					'Deployment',
+					'Security',
+					'Infrastructure',
+					'Support',
+				];
+				break;
+			case 'officeproductivity':
+				subcategories = [
+					'JIRA',
+					'Confluence',
+					'SCRUM',
+				];
+				break;
+			default:
 				subcategories = [
 					'Development',
 					'IT & Software',

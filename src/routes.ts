@@ -1,9 +1,11 @@
 import { Route } from '@angular/router';
 
+import { CourseResolver } from './services/course-resolver.service';
+
 import {
 	AboutComponent,
+	CourseComponent,
 	CourseDetailComponent,
-	CourseDevelopmentComponent,
 	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
@@ -14,8 +16,8 @@ import {
 
 const components = [
 	AboutComponent,
+	CourseComponent,
 	CourseDetailComponent,
-	CourseDevelopmentComponent,
 	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
@@ -32,15 +34,21 @@ const routes: Route[] = [
 		path: 'courses',
 		component: CoursesComponent,
 		children: [
-			{ path: ':id', component: CourseDevelopmentComponent},
-			{ path: '', component: CourseListComponent},	// nested route
-			{ path: ':id', outlet: 'sidemenu', component: SideMenuComponent},
-			{ path: '', outlet: 'sidemenu', component: SideMenuComponent},	// auxillary nested route
+			{
+				path: ':id',
+				component: CourseDetailComponent,
+				resolve: {
+					course: CourseResolver,
+				},
+			},
+			{ path: '', component: CourseListComponent },	// nested route
+			{ path: ':id', outlet: 'sidemenu', component: SideMenuComponent },
+			{ path: '', outlet: 'sidemenu', component: SideMenuComponent },	// auxillary nested route
 		],
 	},
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
-	{ path: '**', redirectTo: '/home', pathMatch: 'full'},
+	{ path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 /* tslint:enable object-literal-sort-keys */
 
-export {components, routes};
+export { components, routes };

@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { Course } from './../../models/course.model';
 
@@ -7,19 +7,18 @@ import { Course } from './../../models/course.model';
 	selector: '[course-detail]',
 	template: require('./course-detail.template.html'),
 })
-export class CourseDetailComponent {
+export class CourseDetailComponent implements OnInit {
 
-	@Input() public course: Course;
+	private title: string;
+	private longDescription: string;
 
-	constructor(private route: ActivatedRoute, private router: Router) { }
+	constructor(private route: ActivatedRoute) { }
 
-	public navigate(path: string): void {
-		this.router.navigate([{
-			outlets: {
-				primary: path,
-				sidemenu: path,
-			},
-		}], { relativeTo: this.route });
+	public ngOnInit(): void {
+		this.route.data
+			.subscribe((data: { course: Course }) => {
+				this.title = data.course.title;
+				this.longDescription = data.course.longDescription;
+			});
 	}
-
 }

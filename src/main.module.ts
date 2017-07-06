@@ -3,7 +3,9 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import {RouterNavigationAppComponent} from './components/app/app.component';
+import { RouterNavigationAppComponent } from './components/app/app.component';
+import { CourseListService } from './services/course-list.service';
+import { CourseResolver } from './services/course-resolver.service';
 
 import { components, routes } from './routes';
 
@@ -16,10 +18,10 @@ import { components, routes } from './routes';
 		BrowserModule,
 		HttpModule,
 		RouterModule.forRoot(routes, {
-			useHash: true,
 			enableTracing: false,
+			useHash: true,
 		}),
 	],
-	providers: [],
+	providers: [CourseListService, CourseResolver],
 })
 export class MainModule { }

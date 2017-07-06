@@ -1,0 +1,6 @@
+<div class="card-block">
+	<h4 class="card-title">{{course.title || ''}}</h4>
+	<h6 class="card-subtitle mb-2 text-muted">{{course.subtitle || ''}}</h6>
+	<p class="card-text">{{course.description || ''}}</p>
+	<a class="btn btn-secondary" (click)="navigate(course.path)">view detail</a>
+</div>
