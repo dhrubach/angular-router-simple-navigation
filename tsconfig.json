@@ -1,19 +1,32 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "allowJs": true,
-        "checkJs": true,
         "alwaysStrict": true,
         "module": "es2015",
-        "moduleResolution": "node",
         "target": "es2015",
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
+        "moduleResolution": "node",
         "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
         "lib": [
             "dom",
             "es2015"
         ],
-        "skipLibCheck": true
-    }
+        "skipLibCheck": true,
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"types": [
+			"chalk",
+			"node",
+			"source-map",
+			"tapable",
+			"uglify-js",
+			"webpack"
+		]
+    },
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }
