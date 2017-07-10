@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { RouterNavigationAppComponent } from './components/app/app.component';
@@ -15,6 +16,7 @@ import { components, routes } from './routes';
 		...components,
 	],
 	imports: [
+		BrowserAnimationsModule,
 		BrowserModule,
 		HttpModule,
 		RouterModule.forRoot(routes, {

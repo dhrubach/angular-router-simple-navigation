@@ -3,24 +3,24 @@ import { Route } from '@angular/router';
 import { CourseResolver } from './services/course-resolver.service';
 
 import {
-	AboutComponent,
 	CourseComponent,
 	CourseDetailComponent,
 	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
+	LaunchDialogComponent,
 	RouterNavigationAppComponent,
 	SideMenuComponent,
 	TopMenuComponent,
 } from './components';
 
 const components = [
-	AboutComponent,
 	CourseComponent,
 	CourseDetailComponent,
 	CourseListComponent,
 	CoursesComponent,
 	HomeComponent,
+	LaunchDialogComponent,
 	RouterNavigationAppComponent,
 	SideMenuComponent,
 	TopMenuComponent,
@@ -29,7 +29,7 @@ const components = [
 /* tslint:disable object-literal-sort-keys */
 const routes: Route[] = [
 	{ path: 'home', component: HomeComponent },
-	{ path: 'about', component: AboutComponent },
+	{ path: 'launch', outlet: 'dialog', component: LaunchDialogComponent },
 	{
 		path: 'courses',
 		component: CoursesComponent,

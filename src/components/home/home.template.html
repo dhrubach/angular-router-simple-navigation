@@ -23,55 +23,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr *ngFor="let lesson of getAllLessons()">
 						<th scope="row">1</th>
-						<td>Architecture</td>
-						<td>10</td>
-						<td>N</td>
-						<td>
-							<div class="d-flex justify-content-around">
-								<button type="button" class="btn btn-secondary">Launch</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Tempalate & Data Binding</td>
-						<td>12</td>
-						<td>N</td>
-						<td>
-							<div class="d-flex justify-content-around">
-								<button type="button" class="btn btn-secondary">Launch</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Routing</td>
-						<td>25</td>
-						<td>Y</td>
-						<td>
-							<div class="d-flex justify-content-around">
-								<button type="button" class="btn btn-secondary">Launch</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">4</th>
-						<td>Dependency Injection</td>
-						<td>15</td>
-						<td>Y</td>
-						<td>
-							<div class="d-flex justify-content-around">
-								<button type="button" class="btn btn-secondary">Launch</button>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">5</th>
-						<td>Testing</td>
-						<td>10</td>
-						<td>N</td>
+						<td>{{lesson.name}}</td>
+						<td>{{lesson.numberOfLessons}}</td>
+						<td>{{lesson.paid}}</td>
 						<td>
 							<div class="d-flex justify-content-around">
 								<button type="button" class="btn btn-secondary">Launch</button>
@@ -82,4 +38,5 @@
 			</table>
 		</div>
 	</div>
+	<router-outlet name="dialog"></router-outlet>
 </main>
