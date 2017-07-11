@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
+import { ModalModule } from 'ngx-bootstrap';
+
 import { RouterNavigationAppComponent } from './components/app/app.component';
 import { CourseListService } from './services/course-list.service';
 import { CourseResolver } from './services/course-resolver.service';
@@ -19,6 +21,7 @@ import { components, routes } from './routes';
 		BrowserAnimationsModule,
 		BrowserModule,
 		HttpModule,
+		ModalModule.forRoot(),
 		RouterModule.forRoot(routes, {
 			enableTracing: false,
 			useHash: true,

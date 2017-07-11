@@ -29,7 +29,6 @@ const components = [
 /* tslint:disable object-literal-sort-keys */
 const routes: Route[] = [
 	{ path: 'home', component: HomeComponent },
-	{ path: 'launch', outlet: 'dialog', component: LaunchDialogComponent },
 	{
 		path: 'courses',
 		component: CoursesComponent,

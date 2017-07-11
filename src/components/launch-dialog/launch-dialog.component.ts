@@ -1,18 +1,22 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { slideInDownAnimation } from './animations';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
-	animations: [slideInDownAnimation],
+	selector: 'launch-course-modal',
+	styles: ['.fade.in { opacity: 1; }'],
 	template: require('./launch-dialog.template.html'),
 })
 export class LaunchDialogComponent {
 
-	@HostBinding('@routeAnimation') private routeAnimation = true;
-	@HostBinding('style.display') private display = 'block';
-	@HostBinding('style.position') private position = 'absolute';
+	@ViewChild('childModal') private modal: ModalDirective;
 
-	constructor(private router: Router) { }
+	public showModal(): void {
+		this.modal.show();
+	}
 
+	public hideModal(): void {
+		this.modal.hide();
+	}
 }

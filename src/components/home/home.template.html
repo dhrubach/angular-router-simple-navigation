@@ -23,14 +23,15 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let lesson of getAllLessons()">
-						<th scope="row">1</th>
+					<tr *ngFor="let lesson of getAllLessons(); index as i">
+						<th scope="row">{{i+1}}</th>
 						<td>{{lesson.name}}</td>
 						<td>{{lesson.numberOfLessons}}</td>
 						<td>{{lesson.paid}}</td>
 						<td>
 							<div class="d-flex justify-content-around">
-								<button type="button" class="btn btn-secondary">Launch</button>
+								<button type="button" class="btn btn-secondary"
+									(click)="openLaunchDialog()">Launch</button>
 							</div>
 						</td>
 					</tr>
@@ -38,5 +39,5 @@
 			</table>
 		</div>
 	</div>
-	<router-outlet name="dialog"></router-outlet>
+	<launch-course-modal></launch-course-modal>
 </main>
