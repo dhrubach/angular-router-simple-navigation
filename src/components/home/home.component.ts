@@ -1,11 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
 import { Lesson } from './../../models/lesson.model';
 import { AllLessonsListService } from './../../services/all-lessons.service';
-import { LaunchDialogComponent } from '../launch-dialog/launch-dialog.component';
 
 @Component({
 	providers: [AllLessonsListService],
@@ -13,9 +12,6 @@ import { LaunchDialogComponent } from '../launch-dialog/launch-dialog.component'
 	template: require('./home.template.html'),
 })
 export class HomeComponent {
-
-	@ViewChild(LaunchDialogComponent)
-	private dialogComponent: LaunchDialogComponent;
 
 	constructor(
 		private lesssonService: AllLessonsListService,
@@ -27,7 +23,7 @@ export class HomeComponent {
 		return this.lesssonService.getLessons();
 	}
 
-	private openLaunchDialog(): void {
-		this.dialogComponent.showModal();
+	private openLaunchDialog(lesson: string): void {
+		this.router.navigate(['/launch', { title: lesson }], { relativeTo: this.route });
 	}
 }

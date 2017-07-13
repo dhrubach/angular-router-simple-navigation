@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 
+import { AllLessonsAuthGuard } from './services/all-lessons-guard.service';
 import { CourseResolver } from './services/course-resolver.service';
 
 import {
@@ -28,7 +29,17 @@ const components = [
 
 /* tslint:disable object-literal-sort-keys */
 const routes: Route[] = [
-	{ path: 'home', component: HomeComponent },
+	{
+		path: 'home',
+		component: HomeComponent,
+		children: [
+			{
+				path: 'launch',
+				component: LaunchDialogComponent,
+				canActivate: [AllLessonsAuthGuard],
+			},
+		],
+	},
 	{
 		path: 'courses',
 		component: CoursesComponent,
