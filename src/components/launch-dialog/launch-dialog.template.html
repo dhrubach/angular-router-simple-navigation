@@ -1,15 +1,16 @@
-<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: true}">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">{{modalTitle}}</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+	aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: true}">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title pull-left">{{modalTitle}}</h4>
+				<button type="button" class="close pull-right" aria-label="Close" (click)="hideModal()">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        Sorry !!! This course is only available for paid members.
-      </div>
-    </div>
-  </div>
+			</div>
+			<div class="modal-body">
+				Sorry !!! This course is only available for paid members.
+			</div>
+		</div>
+	</div>
 </div>

@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { ModalModule } from 'ngx-bootstrap';
 
 import { RouterNavigationAppComponent } from './components/app/app.component';
+import { AllLessonsAuthGuard } from './services/all-lessons-guard.service';
 import { CourseListService } from './services/course-list.service';
 import { CourseResolver } from './services/course-resolver.service';
 
@@ -27,6 +28,6 @@ import { components, routes } from './routes';
 			useHash: true,
 		}),
 	],
-	providers: [CourseListService, CourseResolver],
+	providers: [AllLessonsAuthGuard, CourseListService, CourseResolver],
 })
 export class MainModule { }

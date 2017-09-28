@@ -37,6 +37,7 @@ const routes: Route[] = [
 				path: 'launch',
 				component: LaunchDialogComponent,
 				canActivate: [AllLessonsAuthGuard],
+				outlet: 'launch',
 			},
 		],
 	},

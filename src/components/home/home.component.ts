@@ -24,6 +24,10 @@ export class HomeComponent {
 	}
 
 	private openLaunchDialog(lesson: string): void {
-		this.router.navigate(['/launch', { title: lesson }], { relativeTo: this.route });
+		this.router.navigate([{
+			outlets: {
+				launch: 'launch'
+			}
+		}], { relativeTo: this.route });
 	}
 }

@@ -27,11 +27,17 @@ export class LaunchDialogComponent implements AfterViewInit, OnInit {
 	}
 
 	public ngAfterViewInit(): void {
-		this.hideModal();
+		this.modal.show();
 	}
 
 	private hideModal(): void {
 		this.modal.hide();
+		this.router.navigate([{
+			outlets: {
+				primary: 'home',
+				launch: null,
+			},
+		}]);
 	}
 
 	private showModal(modalTitle: string): void {
